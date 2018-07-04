@@ -1,6 +1,9 @@
 <h1>NBA Team App</h1>
-<button mat-raised-button color="primary">Add Coach</button>
-<button mat-raised-button color="primary">Add player</button>
+
+<div class="buttons">
+  <button mat-raised-button color="primary" class="add-btn">Add Coach</button>
+  <button mat-raised-button color="primary" class="add-btn">Add player</button>
+</div>
 
 <mat-expansion-panel *ngFor="let team of teams">
   <mat-expansion-panel-header>
@@ -22,10 +25,10 @@
 
 <form [formGroup]="teamForm">
   <div *ngIf="teamForm.get('coaches').length">
-      <app-coach *ngFor="let coach of teamForm.get('coaches')" [parentForm]="teamForm"></app-coach>
+    <app-coach *ngFor="let coach of teamForm.get('coaches')" [parentForm]="teamForm"></app-coach>
   </div>
   <div *ngIf="teamForm.get('players').length">
-      <app-player *ngFor="let player of teamForm.get('players')" [parentForm]="teamForm"></app-player>
+    <app-player *ngFor="let player of teamForm.get('players')" [parentForm]="teamForm"></app-player>
   </div>
   <button type="submit" mat-raised-button color="warn" (click)="submit()">Submit</button>
 </form>

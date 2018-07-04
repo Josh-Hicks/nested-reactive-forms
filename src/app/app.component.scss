@@ -1,0 +1,25 @@
+.buttons {
+  overflow: auto;
+}
+
+.add-btn {
+  margin-left: 1rem;
+  float: right;
+}
+
+mat-expansion-panel {
+  background: #fafa;
+  color: #fff;
+  font-size: 1.2em;
+  margin: 1rem 0;
+
+  mat-panel-title {
+    letter-spacing: 0.75px;
+    font-size: 1.25em;
+    font-weight: 700;
+  }
+}
+
+[type='submit'] {
+  float: right;
+}

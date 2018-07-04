@@ -1,2 +1,8 @@
 @import 'assets/scss/variables';
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+    background: #222;
+    color: #fafafa;
+    padding: 2.5%;
+}
