@@ -7,14 +7,25 @@
     <mat-panel-title>
       {{team.name}}
     </mat-panel-title>
-    <mat-panel-description>
-      This is a summary of the content
-    </mat-panel-description>
   </mat-expansion-panel-header>
-
-  <p>This is the primary content of the panel.</p>
+  <p>Coaches:</p>
+  <ul>
+    <li *ngFor="let coach of team.coaches">{{coach.name}}
+      <br> {{coach.position}}</li>
+  </ul>
+  <p>Players:</p>
+  <ul>
+    <li *ngFor="let player of team.players">{{player.name}} - {{player.number}}
+      <br> {{player.position}}</li>
+  </ul>
 </mat-expansion-panel>
 
 <form [formGroup]="teamForm">
-  
+  <div *ngIf="teamForm.get('coaches').length">
+      <app-coach *ngFor="let coach of teamForm.get('coaches')" [parentForm]="teamForm"></app-coach>
+  </div>
+  <div *ngIf="teamForm.get('players').length">
+      <app-player *ngFor="let player of teamForm.get('players')" [parentForm]="teamForm"></app-player>
+  </div>
+  <button type="submit" mat-raised-button color="warn" (click)="submit()">Submit</button>
 </form>
