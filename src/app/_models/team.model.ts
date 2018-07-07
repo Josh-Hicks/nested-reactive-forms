@@ -1,8 +1,13 @@
-import { Coach } from './coach.model';
-import { Player } from './player.model';
+import { FormArray } from '@angular/forms';
 
-export interface Team {
+export class Team {
     name: string;
-    coaches: Coach[];
-    players: Player[];
+    coaches: FormArray;
+    players: FormArray;
+
+    constructor(name?: string, coaches?: FormArray, players?: FormArray) {
+        this.name = name || '';
+        this.coaches = coaches || new FormArray([]);
+        this.players = players || new FormArray([]);
+    }
 }

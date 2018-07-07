@@ -1,3 +1,6 @@
-<p>
-  coach works!
-</p>
+<form [formGroup]="coachForm">
+    <label for="name">Name:</label>
+    <input type="text" matInput id="name" formControlName="name">
+    <label for="position">Position</label>
+    <input type="text" matInput id="position" formControlName="position">
+  </form>

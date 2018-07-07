@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
+
+import { Coach } from '../_models'
 
 @Component({
   selector: 'app-coach',
@@ -8,11 +10,14 @@ import { FormGroup } from '@angular/forms';
 })
 export class CoachComponent implements OnInit {
   @Input() parentForm: FormGroup;
+  @Input() coach: Coach;
 
-  constructor() { }
+  coachForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    
+    console.log(this.coach)
   }
 
 }

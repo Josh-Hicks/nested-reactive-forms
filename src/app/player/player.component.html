@@ -1,3 +1,8 @@
-<p>
-  player works!
-</p>
+<form [formGroup]="playerForm">
+  <label for="name">Name:</label>
+  <input type="text" matInput id="name" formControlName="name">
+  <label for="position">Position</label>
+  <input type="text" matInput id="position" formControlName="position">
+  <label for="number">Number:</label>
+  <input type="text" matInput id="number" formControlName="number">
+</form>
